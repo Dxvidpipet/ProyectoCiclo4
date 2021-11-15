@@ -1,4 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo, hasOne} from '@loopback/repository';
+import {Marca} from './marca.model';
+import {Foto} from './foto.model';
 
 @model()
 export class Vehiculo extends Entity {
@@ -51,6 +53,11 @@ export class Vehiculo extends Entity {
   })
   existencia_vehiculo: boolean;
 
+  @belongsTo(() => Marca, {name: 'tiene_marca'})
+  id_marca: number;
+
+  @hasOne(() => Foto, {keyTo: 'id_vehicuo'})
+  tiene_foto: Foto;
 
   constructor(data?: Partial<Vehiculo>) {
     super(data);
