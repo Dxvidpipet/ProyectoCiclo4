@@ -1,6 +1,6 @@
-import {Entity, model, property, belongsTo, hasOne} from '@loopback/repository';
-import {Marca} from './marca.model';
+import {belongsTo, Entity, hasOne, model, property} from '@loopback/repository';
 import {Foto} from './foto.model';
+import {Marca} from './marca.model';
 
 @model()
 export class Vehiculo extends Entity {
@@ -21,7 +21,7 @@ export class Vehiculo extends Entity {
     type: 'string',
     required: true,
   })
-  modelo_Vehiculo: string;
+  modelo_vehiculo: string;
 
   @property({
     type: 'number',
@@ -65,7 +65,7 @@ export class Vehiculo extends Entity {
 }
 
 export interface VehiculoRelations {
-  // describe navigational properties here
+  // describe navigational propert_vehiuies here
 }
 
 export type VehiculoWithRelations = Vehiculo & VehiculoRelations;

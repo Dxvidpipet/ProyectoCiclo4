@@ -1,6 +1,6 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
-import {MysqlDataSource} from '../datasources';
+import {Mysql2DataSource} from '../datasources';
 import {Foto, FotoRelations} from '../models';
 
 export class FotoRepository extends DefaultCrudRepository<
@@ -9,7 +9,7 @@ export class FotoRepository extends DefaultCrudRepository<
   FotoRelations
 > {
   constructor(
-    @inject('datasources.mysql') dataSource: MysqlDataSource,
+    @inject('datasources.mysql2') dataSource: Mysql2DataSource,
   ) {
     super(Foto, dataSource);
   }
