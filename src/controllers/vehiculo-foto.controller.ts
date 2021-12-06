@@ -42,7 +42,7 @@ export class VehiculoFotoController {
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter<Foto>,
   ): Promise<Foto> {
-    return this.vehiculoRepository.tiene_foto(id).get(filter);
+    return this.vehiculoRepository.foto(id).get(filter);
   }
 
   @post('/vehiculos/{id}/foto', {
@@ -61,13 +61,13 @@ export class VehiculoFotoController {
           schema: getModelSchemaRef(Foto, {
             title: 'NewFotoInVehiculo',
             exclude: ['idFoto'],
-            optional: ['id_vehicuo']
+            optional: ['vehiculoId']
           }),
         },
       },
     }) foto: Omit<Foto, 'idFoto'>,
   ): Promise<Foto> {
-    return this.vehiculoRepository.tiene_foto(id).create(foto);
+    return this.vehiculoRepository.foto(id).create(foto);
   }
 
   @patch('/vehiculos/{id}/foto', {
@@ -90,7 +90,7 @@ export class VehiculoFotoController {
     foto: Partial<Foto>,
     @param.query.object('where', getWhereSchemaFor(Foto)) where?: Where<Foto>,
   ): Promise<Count> {
-    return this.vehiculoRepository.tiene_foto(id).patch(foto, where);
+    return this.vehiculoRepository.foto(id).patch(foto, where);
   }
 
   @del('/vehiculos/{id}/foto', {
@@ -105,6 +105,6 @@ export class VehiculoFotoController {
     @param.path.number('id') id: number,
     @param.query.object('where', getWhereSchemaFor(Foto)) where?: Where<Foto>,
   ): Promise<Count> {
-    return this.vehiculoRepository.tiene_foto(id).delete(where);
+    return this.vehiculoRepository.foto(id).delete(where);
   }
 }

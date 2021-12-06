@@ -33,6 +33,6 @@ export class VehiculoMarcaController {
   async getMarca(
     @param.path.number('id') id: typeof Vehiculo.prototype.id_vehiculo,
   ): Promise<Marca> {
-    return this.vehiculoRepository.tiene_marca(id);
+    return this.vehiculoRepository.marca(id);
   }
 }
