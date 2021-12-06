@@ -4,3 +4,4 @@ export * from './foto.model';
 export * from './proveedor.model';
 export * from './vehiculo.model';
 
+export * from './categoria-vehicuo.model';
