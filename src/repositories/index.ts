@@ -4,3 +4,7 @@ export * from './marca.repository';
 export * from './proveedor.repository';
 export * from './vehiculo.repository';
 export * from './categoria-vehicuo.repository';
+export * from './factura.repository';
+export * from './rol.repository';
+export * from './usuario.repository';
+export * from './ventas.repository';
